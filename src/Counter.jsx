@@ -1,4 +1,6 @@
 import React from "react";
+import defence from './images/award.png';
+import attack from './images/sword.png'; 
 
 export default class Counter extends React.Component {
   constructor(props){
@@ -12,13 +14,22 @@ export default class Counter extends React.Component {
 
   handleAttack(){
     //alert("Attack clicked!");
-    this.setState({count: this.state.count + 1})
+    this.setState((previousState)=>{
+      return {
+        count: previousState.count + 1
+      };
+    });
+    // this.setState({count: this.state.count + 1})
     // this.state.count = 2;
   }
 
   handleDefence(){
     //alert("Defent clicked!")
-    this.setState({count: this.state.count - 1})
+    this.setState((previousState)=>{
+      return {
+        count: previousState.count - 1
+      };
+    });
   }
 
   render(){
